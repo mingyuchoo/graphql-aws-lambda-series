@@ -17,4 +17,4 @@ Resources:
           Properties:
             Path: /graphql
             Method: ANY
-      Handler: src/index.handler
+      Handler: dist/index.handler

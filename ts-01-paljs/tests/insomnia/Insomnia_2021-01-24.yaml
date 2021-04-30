@@ -1,0 +1,65 @@
+_type: export
+__export_format: 4
+__export_date: 2021-01-24T11:06:22.145Z
+__export_source: insomnia.desktop.app:v2020.5.2
+resources:
+  - _id: req_b4bb3b3877564923afc68bdb6f2f53cb
+    parentId: wrk_8a706777513c4c9293f94092ca9c54fe
+    modified: 1611486364410
+    created: 1611480554334
+    url: https://blablabla.amazonaws.com/Prod/graphql
+    name: hello-world
+    description: ""
+    method: POST
+    body:
+      mimeType: application/graphql
+      text: '{"query":"query {\n  hello\n}"}'
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_23ad47197ea340a8a02fc02d42ea7f75
+    authentication: {}
+    metaSortKey: -1611480554335
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: wrk_8a706777513c4c9293f94092ca9c54fe
+    parentId: null
+    modified: 1611480539554
+    created: 1611480539554
+    name: aws
+    description: ""
+    scope: spec
+    _type: workspace
+  - _id: env_fb17604901c8defe11459ddbdd40ccc990e71be5
+    parentId: wrk_8a706777513c4c9293f94092ca9c54fe
+    modified: 1611480541613
+    created: 1611480541613
+    name: Base Environment
+    data: {}
+    dataPropertyOrder: null
+    color: null
+    isPrivate: false
+    metaSortKey: 1611480541613
+    _type: environment
+  - _id: jar_fb17604901c8defe11459ddbdd40ccc990e71be5
+    parentId: wrk_8a706777513c4c9293f94092ca9c54fe
+    modified: 1611480541615
+    created: 1611480541615
+    name: Default Jar
+    cookies: []
+    _type: cookie_jar
+  - _id: spc_cd220f13a053490e82856a36d519be05
+    parentId: wrk_8a706777513c4c9293f94092ca9c54fe
+    modified: 1611480539586
+    created: 1611480539586
+    fileName: aws
+    contents: ""
+    contentType: yaml
+    _type: api_spec

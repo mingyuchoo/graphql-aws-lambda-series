@@ -1,0 +1,38 @@
+{
+  "name": "demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "clean": "rimraf dist package.yml",
+    "lint": "eslint --config .eslintrc.yml --fix './src/**/*.{js,jsx}'",
+    "build": "npm run clean && babel src --out-dir dist",
+    "sam:validate": "sam validate --profile default --template template.yml",
+    "sam:package": "sam package --template-file template.yml --output-template-file package.yml --s3-bucket <bucket-name>",
+    "sam:deploy": "sam deploy --template-file package.yml --stack-name <bucket-name> --capabilities CAPABILITY_IAM"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/cli": "latest",
+    "@babel/core": "latest",
+    "@babel/node": "latest",
+    "@babel/preset-env": "latest",
+    "apollo-server-lambda": "^2.19.2",
+    "graphql": "^15.4.0"
+  },
+  "devDependencies": {
+    "eslint": "latest",
+    "eslint-config-prettier": "latest",
+    "eslint-plugin-prettier": "latest",
+    "husky": "^4.3.8",
+    "prettier": "latest",
+    "rimraf": "latest"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint"
+    }
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "name": "demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "scripts": {
+    "clean": "rimraf dist",
+    "lint": "eslint --config .eslintrc.yml --fix './src/**/*.ts'",
+    "test": "jest --verbose --watchAll=false",
+    "build": "tsc -p .",
+    "generate": "npm -s run generate:prisma && npm -s run generate:nexus",
+    "generate:prisma": "prisma generate",
+    "generate:nexus": "ts-node --transpile-only src/nexusSchema",
+    "create-migration": "prisma migrate dev --preview-feature",
+    "migrate-database": "prisma db push --preview-feature",
+    "sam:validate": "sam validate --profile default --template template.yml",
+    "sam:package": "sam package --template-file template.yml --output-template-file package.yml --s3-bucket <bucket-name>",
+    "sam:deploy": "sam deploy --template-file package.yml --stack-name <bucket-name> --capabilities CAPABILITY_IAM"
+  },
+  "dependencies": {
+    "nexus": "1.0.0",
+    "@prisma/client": "2.15.0",
+    "@paljs/nexus": "2.11.0",
+    "apollo-server-lambda": "^2.19.2",
+    "graphql": "^15.4.0"
+  },
+  "devDependencies": {
+    "@prisma/cli": "2.15.0",
+    "@types/graphql": "^14.5.0",
+    "@types/jest": "^26.0.20",
+    "@types/node": "^14.14.22",
+    "@typescript-eslint/eslint-plugin": "^4.14.0",
+    "@typescript-eslint/parser": "^4.14.0",
+    "eslint": "^7.18.0",
+    "eslint-config-prettier": "^7.2.0",
+    "eslint-plugin-jest": "^24.1.3",
+    "eslint-plugin-prettier": "^3.3.1",
+    "eslint-plugin-simple-import-sort": "^7.0.0",
+    "jest": "^26.6.3",
+    "prettier": "^2.2.1",
+    "rimraf": "^3.0.2",
+    "ts-jest": "^26.4.4",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.1.3"
+  }
+}
